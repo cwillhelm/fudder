@@ -40,10 +40,10 @@ def get_data():
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # some formatting
-print("Fudder - CrpytoCurrency Prices Live Inside Your Terminal")
-print("--------------------------------------------------------")
-print(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-
+print("Fudder - CrpytoCurrency Prices Live Inside Your Terminal |")
+print("-------------------------------------------------------- |")
+print(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + "                                      |") # nice formatting
+print("-------------------------------------------------------- |")
 # accept / set default system arguments
 try:
     # number of currencies to show
@@ -72,6 +72,8 @@ while True:
         price = coin['price_' + currency.lower()]
         print(rank + ". " + name + " - " + "$" + str(round(float(price), 2)) + " " + currency + " " + pct_change + "%")
 
-    print("--------------------------------------------------------")
+    print("-------------------------------------------------------- |")
     print(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+
+    #CoinMarketCap API wants us to poll no more than 10 times per minute, we'll be nice and do just under that (:
     time.sleep(7)
